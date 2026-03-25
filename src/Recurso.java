@@ -1,7 +1,7 @@
 public class Recurso {
     private final int id;
     private final String nomeDoRecurso;
-    private final String categoria; // ex: Notebook, Monitor, Licença
+    private final String categoria; 
     private boolean disponivel;
     private final double valorEstimado;
 
