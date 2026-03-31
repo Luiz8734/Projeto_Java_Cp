@@ -165,6 +165,7 @@ Menu interativo:
 7. Exibir Alocações
 8. Custo Total por Colaborador
 9. Promover Colaborador
+10. Demitir Colaborador
 0. Sair
 
 ---
