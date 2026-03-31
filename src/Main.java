@@ -34,6 +34,9 @@ public class Main {
                 case 8:
                     calcularCustoTotal(scanner, sistema);
                     break;
+                case 10:
+                    demitirColaborador(scanner, sistema);
+                    break;
                 case 9:
                     promoverColaborador(scanner, sistema);
                     break;
@@ -59,6 +62,7 @@ public class Main {
         System.out.println("7. Exibir Alocações (histórico)");
         System.out.println("8. Inovação: Custo Total por Colaborador");
         System.out.println("9. Promover Colaborador");
+        System.out.println("10. Demitir Colaborador");
         System.out.println("0. Sair");
     }
 
@@ -145,6 +149,10 @@ public class Main {
             }
             System.out.println("Formato inválido. Use AAAA-MM-DD (ex: 2026-03-25).");
         }
+    }
+    private static void demitirColaborador(Scanner scanner, SistemaERS sistema) {
+        int colaboradorId = lerInt(scanner, "ID do colaborador: ");
+        sistema.demitirColaborador(colaboradorId);
     }
 }
 

@@ -204,5 +204,31 @@ public class SistemaERS {
         }
         return null;
     }
+    public void demitirColaborador(int colaboradorId) {
+        Colaborador colaborador = buscarColaboradorPorId(colaboradorId);
+
+        if (colaborador == null) {
+            System.out.println("Colaborador não encontrado: " + colaboradorId);
+            return;
+        }
+
+        if (!colaborador.isAtivo()) {
+            System.out.println("Colaborador já está inativo.");
+            return;
+        }
+
+        // Devolve automaticamente todos os recursos desse colaborador
+        for (Recurso r : recursos) {
+            if (!r.isDisponivel() && recursoAtualmenteAlocadoParaColaborador(r.getId(), colaboradorId)) {
+                r.setDisponivel(true);
+                String dataHoje = java.time.LocalDate.now().toString();
+                alocacoes.add(new Alocacao(colaboradorId, r.getId(), dataHoje, "DEVOLVIDO (AUTO - DEMISSÃO)"));
+            }
+        }
+
+        colaborador.desativar();
+
+        System.out.println("Colaborador demitido e recursos devolvidos com sucesso.");
+    }
 }
 

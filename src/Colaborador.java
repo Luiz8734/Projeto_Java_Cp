@@ -5,7 +5,7 @@ public class Colaborador {
     private final String nome;
     private String cargo;
     private double salario;
-    private final boolean ativo;
+    private boolean ativo;
     private final String dataDeAdmissao; // formato esperado: AAAA-MM-DD
 
     public Colaborador(int id, String nome, String cargo, double salario, String dataDeAdmissao) {
@@ -66,6 +66,10 @@ public class Colaborador {
     @Override
     public int hashCode() {
         return Objects.hash(id);
+    }
+
+    public void desativar() {
+        this.ativo = false;
     }
 }
 
