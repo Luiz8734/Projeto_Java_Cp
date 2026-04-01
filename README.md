@@ -1,4 +1,4 @@
-# 📘 ERS — Employee Resource System
+# 📘 WorkForce Manager
 
 ## 👥 Integrantes do Grupo
 
