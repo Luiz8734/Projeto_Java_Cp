@@ -1,7 +1,7 @@
 public class Alocacao {
     private final int colaboradorId;
     private final int recursoId;
-    private final String data; // formato AAAA-MM-DD (exemplo)
+    private final String data; // formato DD-MM-AAAA(exemplo)
     private final String observacao;
 
     public Alocacao(int colaboradorId, int recursoId, String data, String observacao) {

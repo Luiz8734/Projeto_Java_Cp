@@ -219,10 +219,16 @@ public class SistemaERS {
 
         // Devolve automaticamente todos os recursos desse colaborador
         for (Recurso r : recursos) {
-            if (!r.isDisponivel() && recursoAtualmenteAlocadoParaColaborador(r.getId(), colaboradorId)) {
+            boolean estaAlocado = !r.isDisponivel();
+            boolean pertenceAoColaborador = recursoAtualmenteAlocadoParaColaborador(r.getId(), colaboradorId);
+
+            if (estaAlocado && pertenceAoColaborador) {
                 r.setDisponivel(true);
+
                 String dataHoje = java.time.LocalDate.now().toString();
-                alocacoes.add(new Alocacao(colaboradorId, r.getId(), dataHoje, "DEVOLVIDO (AUTO - DEMISSÃO)"));
+
+                Alocacao devolucao = new Alocacao(colaboradorId, r.getId(), dataHoje, "DEVOLVIDO (AUTO - DEMISSÃO)");
+                alocacoes.add(devolucao);
             }
         }
 

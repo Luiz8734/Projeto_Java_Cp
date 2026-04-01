@@ -6,7 +6,7 @@ public class Colaborador {
     private String cargo;
     private double salario;
     private boolean ativo;
-    private final String dataDeAdmissao; // formato esperado: AAAA-MM-DD
+    private final String dataDeAdmissao; // formato esperado: DD-MM-AAAA
 
     public Colaborador(int id, String nome, String cargo, double salario, String dataDeAdmissao) {
         this.id = id;

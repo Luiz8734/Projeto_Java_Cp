@@ -76,7 +76,7 @@ public class Main {
 
     private static void cadastrarRecurso(Scanner scanner, SistemaERS sistema) {
         String nomeDoRecurso = lerTexto(scanner, "Nome do recurso: ");
-        String categoria = lerTexto(scanner, "Categoria (ex: Notebook, Monitor, Licença): ");
+        String categoria = lerTexto(scanner, "Categoria ( Notebook, Monitor, Licença, Mouse): ");
         double valorEstimado = lerDouble(scanner, "Valor estimado: ");
         sistema.cadastrarRecurso(nomeDoRecurso, categoria, valorEstimado);
     }
@@ -125,30 +125,30 @@ public class Main {
             try {
                 return Double.parseDouble(linha.trim().replace(",", "."));
             } catch (NumberFormatException e) {
-                System.out.println("Entrada inválida. Digite um número (ex: 1234.56).");
+                System.out.println("Entrada inválida. Digite um número (ex: 234.56).");
             }
         }
     }
 
     private static String lerTexto(Scanner scanner, String prompt) {
-        while (true) {
+        String texto = "";
+        while (texto.isEmpty()) {
             System.out.print(prompt);
-            String texto = scanner.nextLine();
-            if (texto != null && !texto.trim().isEmpty()) {
-                return texto.trim();
+            texto = scanner.nextLine().trim();
+            if (texto.isEmpty()) {
+                System.out.println("Campo não pode ficar vazio.");
             }
-            System.out.println("Campo não pode ficar vazio.");
         }
+        return texto;
     }
 
     private static String lerData(Scanner scanner) {
-        while (true) {
-            String data = lerTexto(scanner, "Data de admissão (AAAA-MM-DD): ");
-            if (data.matches("\\d{4}-\\d{2}-\\d{2}")) {
-                return data;
-            }
-            System.out.println("Formato inválido. Use AAAA-MM-DD (ex: 2026-03-25).");
+        String data;
+        while (!(data = lerTexto(scanner, "Data de admissão (DD/MM/AAAA): "))
+                .matches("\\d{2}/\\d{2}/\\d{4}")) {
+            System.out.println("Formato inválido. Use DD/MM/AAAA (ex: 25/03/2026).");
         }
+        return data;
     }
     private static void demitirColaborador(Scanner scanner, SistemaERS sistema) {
         int colaboradorId = lerInt(scanner, "ID do colaborador: ");
