@@ -52,7 +52,7 @@ public class Main {
     }
 
     private static void exibirMenu() {
-        System.out.println("===== ERS - Employee Resource System =====");
+        System.out.println("=====  WorkForce Manager =====");
         System.out.println("1. Cadastrar Colaborador");
         System.out.println("2. Cadastrar Recurso");
         System.out.println("3. Alocar Recurso");
