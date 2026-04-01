@@ -1,4 +1,4 @@
-# 📘 ERS — Employee Resource System
+# 📘 WorkForce Manager
 
 ## 👥 Integrantes do Grupo
 
@@ -247,4 +247,4 @@ Menu interativo:
 
 ## 📌 Conclusão
 
-O ERS demonstra como a lógica de programação orientada a objetos pode resolver problemas reais de governança. Ao integrar regras de segurança e automação no desligamento, o projeto simula as necessidades de conformidade e eficiência exigidas por grandes corporações no manejo de seus ativos tecnológicos.
+O  WorkForce Manager demonstra como a lógica de programação orientada a objetos pode resolver problemas reais de governança. Ao integrar regras de segurança e automação no desligamento, o projeto simula as necessidades de conformidade e eficiência exigidas por grandes corporações no manejo de seus ativos tecnológicos.
